@@ -1,0 +1,512 @@
+data = mean_comp,
+aes(y = emmean),
+color = "red",
+position = position_nudge(x = 0.2)
+) +
+# red error bars representing the confidence limits of the adjusted means
+geom_errorbar(
+data = mean_comp,
+aes(ymin = lower.CL, ymax = upper.CL),
+color = "red",
+width = 0.1,
+position = position_nudge(x = 0.2)
+) +
+# red letters
+geom_text(
+data = mean_comp,
+aes(y = emmean, label = str_trim(.group)),
+color = "red",
+position = position_nudge(x = 0.35),
+hjust = 0
+) +
+scale_x_discrete(
+name = "Nitrogen"
+) +
+scale_y_continuous(
+name = "Yield",
+limits = c(0, NA),
+expand = expansion(mult = c(0, 0.1))
+) +
+scale_color_manual(
+values = Ncolors,
+guide = "none"
+) +
+theme_bw() +
+labs(caption = my_caption) +
+theme(
+plot.caption = element_textbox_simple(margin = margin(t = 5)),
+plot.caption.position = "plot",
+axis.text.x = element_text(
+angle = 45,
+hjust = 1,
+vjust = 1
+)
+)
+get(wd)
+get(Wd)
+rm(pacman)
+rm("pacman")
+rm("lmerTest")
+#Load the library
+library(datasets)
+library(agricolae)
+# Load the iris dataset (it's built-in)
+data<-read.csv(file.choose())
+head(data)
+#Anova
+model<- with(data, sp.plot(Rep, Date, Trt, PHPI ))
+## LSD test
+gla<- model$gl.a
+glb<- model$gl.b
+Ea<- model$Ea
+Eb<- model$Eb
+#output
+out1<- with(data, LSD.test(PHPI,Date, gla,Ea, console= T))
+out2<- with(data, LSD.test(PHPI,Trt, glb,Eb, console= T))
+#  Step 1:Create interaction variable
+data$DateTrt <- interaction(data$Date, data$Trt)
+# Step 2: Run LSD test on interaction
+out3 <- with(data, LSD.test(PHPI, DateTrt, glb, Eb, console = TRUE))
+##  Extract and round only numeric columns
+# For out1
+df1 <- out1$groups
+df1$PHPI <- round(df1$PHPI, 3)
+# For out2
+df2 <- out2$groups
+df2$PHPI <- round(df2$PHPI, 3)
+# For out3
+df3 <- out3$groups
+df3$PHPI <- round(df3$PHPI, 3)
+# Create the dataset (replace with read.csv if using a CSV file)
+data <- data.frame(
+Date = c("D1", "D2"),
+PHPI = c(53.798, 73.917),
+TTPI = c(11.104, 17.198),
+SVPI = c(40.166, 38.462),
+DWPI = c(13.418, 12.824),
+PHFL = c(69.083, 92.781),
+TTFL = c(15.708, 18.792),
+SVFL = c(36.65, 33.274),
+DWFL = c(16.008, 17.459),
+PHH = c(85.573, 94.26),
+ET = c(17.583, 14.24),
+NET = c(2.494, 1.938),
+TT = c(20.077, 16.177),
+PL = c(21.523, 21.667),
+NGP = c(95.404, 81.092),
+NEGP = c(23.85, 22.633),
+TGW = c(19.405, 20.175),
+GY1 = c(5.206, 3.705),
+SY1 = c(5.197, 6.232),
+BY1 = c(10.403, 9.937),
+HI1 = c(50.099, 37.374)
+)
+# Function to calculate statistics for each trait
+calculate_stats <- function(data) {
+# Exclude Date column
+numeric_cols <- names(data)[names(data) != "Date"]
+results <- data.frame(
+Trait = character(),
+Mean = numeric(),
+Std_Dev = numeric(),
+CV_Percent = numeric(),
+Standard_Error = numeric(),
+stringsAsFactors = FALSE
+)
+for (trait in numeric_cols) {
+values <- data[[trait]]
+mean_val <- mean(values)
+std_val <- sd(values)
+cv_percent <- (std_val / mean_val) * 100
+se_val <- std_val / sqrt(length(values))
+results <- rbind(results, data.frame(
+Trait = trait,
+Mean = round(mean_val, 3),
+Std_Dev = round(std_val, 3),
+CV_Percent = round(cv_percent, 2),
+Standard_Error = round(se_val, 3)
+))
+}
+return(results)
+}
+# Calculate statistics
+trait_stats <- calculate_stats(data)
+# Display results
+print("Trait-wise Statistical Summary:")
+print(trait_stats)
+# Create the dataset (replace with read.csv if using a CSV file)
+data<-read.csv(file.choose())
+# Create the dataset (replace with read.csv if using a CSV file)
+data<-read.csv(file.choose())
+head(data)
+# Function to calculate statistics for each trait
+calculate_stats <- function(data) {
+# Exclude Date column
+numeric_cols <- names(data)[names(data) != "Date"]
+results <- data.frame(
+Trait = character(),
+Mean = numeric(),
+Std_Dev = numeric(),
+CV_Percent = numeric(),
+Standard_Error = numeric(),
+stringsAsFactors = FALSE
+)
+for (trait in numeric_cols) {
+values <- data[[trait]]
+mean_val <- mean(values)
+std_val <- sd(values)
+cv_percent <- (std_val / mean_val) * 100
+se_val <- std_val / sqrt(length(values))
+results <- rbind(results, data.frame(
+Trait = trait,
+Mean = round(mean_val, 3),
+Std_Dev = round(std_val, 3),
+CV_Percent = round(cv_percent, 2),
+Standard_Error = round(se_val, 3)
+))
+}
+return(results)
+}
+# Calculate statistics
+trait_stats <- calculate_stats(data)
+# Display results
+print("Trait-wise Statistical Summary:")
+print(trait_stats)
+# Create the dataset (replace with read.csv if using a CSV file)
+data<-read.csv(file.choose())
+head(data)
+# Function to calculate statistics for each trait
+calculate_stats <- function(data) {
+# Exclude Date column
+numeric_cols <- names(data)[names(data) != "Date"]
+results <- data.frame(
+Trait = character(),
+Mean = numeric(),
+Std_Dev = numeric(),
+CV_Percent = numeric(),
+Standard_Error = numeric(),
+stringsAsFactors = FALSE
+)
+for (trait in numeric_cols) {
+values <- data[[trait]]
+mean_val <- mean(values)
+std_val <- sd(values)
+cv_percent <- (std_val / mean_val) * 100
+se_val <- std_val / sqrt(length(values))
+results <- rbind(results, data.frame(
+Trait = trait,
+Mean = round(mean_val, 3),
+Std_Dev = round(std_val, 3),
+CV_Percent = round(cv_percent, 2),
+Standard_Error = round(se_val, 3)
+))
+}
+return(results)
+}
+# Calculate statistics
+trait_stats <- calculate_stats(data)
+# Display results
+print("Trait-wise Statistical Summary:")
+print(trait_stats)
+# Create the dataset (replace with read.csv if using a CSV file)
+data<-read.csv(file.choose())
+head(data)
+# Function to calculate statistics for each trait
+calculate_stats <- function(data) {
+# Exclude Date column
+numeric_cols <- names(data)[names(data) != "Date"]
+results <- data.frame(
+Trait = character(),
+Mean = numeric(),
+Std_Dev = numeric(),
+CV_Percent = numeric(),
+Standard_Error = numeric(),
+stringsAsFactors = FALSE
+)
+for (trait in numeric_cols) {
+values <- data[[trait]]
+mean_val <- mean(values)
+std_val <- sd(values)
+cv_percent <- (std_val / mean_val) * 100
+se_val <- std_val / sqrt(length(values))
+results <- rbind(results, data.frame(
+Trait = trait,
+Mean = round(mean_val, 3),
+Std_Dev = round(std_val, 3),
+CV_Percent = round(cv_percent, 2),
+Standard_Error = round(se_val, 3)
+))
+}
+return(results)
+}
+# Calculate statistics
+trait_stats <- calculate_stats(data)
+# Display results
+print("Trait-wise Statistical Summary:")
+print(trait_stats)
+# Create the dataset (replace with read.csv if using a CSV file)
+data<-read.csv(file.choose())
+head(data)
+# Function to calculate statistics for each trait
+calculate_stats <- function(data) {
+# Exclude Date column
+numeric_cols <- names(data)[names(data) != "Date"]
+results <- data.frame(
+Trait = character(),
+Mean = numeric(),
+Std_Dev = numeric(),
+CV_Percent = numeric(),
+Standard_Error = numeric(),
+stringsAsFactors = FALSE
+)
+for (trait in numeric_cols) {
+values <- data[[trait]]
+mean_val <- mean(values)
+std_val <- sd(values)
+cv_percent <- (std_val / mean_val) * 100
+se_val <- std_val / sqrt(length(values))
+results <- rbind(results, data.frame(
+Trait = trait,
+Mean = round(mean_val, 3),
+Std_Dev = round(std_val, 3),
+CV_Percent = round(cv_percent, 2),
+Standard_Error = round(se_val, 3)
+))
+}
+return(results)
+}
+# Calculate statistics
+trait_stats <- calculate_stats(data)
+# Display results
+print("Trait-wise Statistical Summary:")
+print(trait_stats)
+###Data load
+data<-read.csv(file.choose())
+View(data)
+data$X<-as.character(x=data$Gen)
+str(data)
+rownames(data)<-c(data$Gen)
+head(data)
+newdata<-data[,-1]
+head(newdata)
+df1<-newdata
+df <- na.omit(df1)
+df <- scale(df1)
+df <- scale(df)
+df <- scale(df)
+df2 <- scale(df)
+df2 <- scale(df)
+head(newdata)
+df<-data (df2)
+df2<-data (df)
+###Data load
+data<-read.csv(file.choose())
+head(data)
+View(data)
+str(data)
+rownames(data)<-c(data$Gen)
+head(data)
+newdata<-data[,-1]
+head(newdata)
+df1<-newdata
+df <- na.omit(df1)
+df2 <- scale(df)
+df2<-data (df)
+head(df2)
+##Dissimilarity matrix/distance matrix
+res.dist<-dist(df1, method="euclidean")
+res.hc<-hclust(d=res.dist, method="ward.D2")
+plot(x=res.hc) #plot 1
+library(factoextra)
+fviz_dend(x=res.hc,cex=2,lwd=2,rect = T) #plot 2
+###Rectangle fill with no border
+fviz_dend(x=res.hc,cex=0.2,lwd=0.8, k=4,  k_colors="jco", xlab = " abcd", ylab = " xyz", main = " dendogram", horiz = F) #plot 3
+###Rectangle fill with border # plot 4
+fviz_dend(x=res.hc,cex=0.2,lwd=0.8,k=5, rect=TRUE, rect_border="jco",  k_colors="jco", rect_fill=TRUE, horiz=TRUE)
+ggsave(filename = "cluster for thesis pdf.tiff", width = 8, height = 12, device='tiff', dpi=300)
+###Data load
+data<-read.csv(file.choose())
+head(data)
+View(data)
+tail(data)
+str(data)
+rownames(data)<-c(data$Gen)
+head(data)
+newdata<-data[,-1]
+head(newdata)
+df1<-newdata
+df <- na.omit(df1)
+df2 <- scale(df)
+head(df2)
+##Dissimilarity matrix/distance matrix
+res.dist<-dist(df1, method="euclidean")
+res.hc<-hclust(d=res.dist, method="ward.D2")
+plot(x=res.hc) #plot 1
+library(factoextra)
+###Inter and Intra distance
+library(clv)
+hid <-cls.scatt.data(pea.s,hcm)
+print(hid) #use $intercls.average and $intracls.average
+###Data load
+data<-read.csv(file.choose()) #with cluster
+head(data)
+rownames(data)<-c(data$Accession)
+rownames(data)<-c(data$Gen)
+head(data)
+data1 <-data[,-1]
+head(data1)
+####Data load
+pea<-read.csv(file.choose()) #without cluster
+head(pea)
+pea<- df
+# Determine number of clusters
+wss <- (nrow(pea)-1)*sum(apply(pea,2,var))
+for (i in 2:11) wss[i] <- sum(kmeans(pea,
+centers=i)$withinss)
+plot(1:10, wss, type="b", xlab="Number of Clusters",
+ylab="Within groups sum of squares")
+####Scaling####
+pea.s <-scale(pea)
+pea.s
+####dissimilarity matrix####
+d <-dist (pea.s)
+options (max.print=100000)
+d
+library(NbClust)
+wardse <-hclust(d,"ward.D2")
+hcm <-cutree(wardse, k=5) #k means the number of cluster
+hcm #sort your data according to the output groups
+###Load the library
+library("pheatmap")
+install.packages("pheatmap")
+###Load the library
+library("pheatmap")
+###Load the library
+library("pheatmap")
+install.packages("pheatmap")
+###Load the library
+library("pheatmap")
+###Load the data
+data<-read.csv(file.choose()) #without cluster
+###Load the data
+data<-read.csv(file.choose()) #without cluster
+head(data)
+rownames(data)<-c(data$Interaction  )
+head(data)
+newdata<-data [ , -1]
+head(newdata)
+matx <- scale(newdata)
+heatmap(matx, scale = "row")
+###Draw Heatmap with Row & Column Clusters (Euclidean", "ward.D2", method )
+pheatmap(matx,
+color=colorRampPalette(c("navy", "white", "red"))(50))
+pheatmap(matx,
+clustering_distance_rows = "euclidean",
+clustering_distance_cols = "euclidean", clustering_method = "ward.D2",
+cutree_rows = 5, cutree_cols =5,
+legend = T,
+fontsize = 11,
+color=colorRampPalette(c("navy", "white", "red"))(50))
+###Draw Heatmap with Row & Column Clusters (Euclidean", "ward.D2", method )
+pheatmap(matx,
+color=colorRampPalette(c("navy", "white", "red"))(50))
+pheatmap(matx,
+clustering_distance_rows = "euclidean",
+clustering_distance_cols = "euclidean", clustering_method = "ward.D2",
+cutree_rows = 5, cutree_cols =5,
+legend = T,
+fontsize = 11,
+color=colorRampPalette(c("navy", "white", "red"))(50))
+head(data)
+str(data)
+rownames(data)<-c(data$Interaction  )
+head(data)
+newdata<-data [ , -1]
+head(newdata)
+matx <- scale(newdata)
+heatmap(matx, scale = "row")
+###Draw Heatmap with Row & Column Clusters (Euclidean", "ward.D2", method )
+pheatmap(matx,
+color=colorRampPalette(c("navy", "white", "red"))(50))
+###Draw Heatmap with Row & Column Clusters (Euclidean", "ward.D2", method )
+pheatmap(matx,
+color=colorRampPalette(c("navy", "white", "red"))(50))
+pheatmap(matx,
+clustering_distance_rows = "euclidean",
+clustering_distance_cols = "euclidean", clustering_method = "ward.D2",
+cutree_rows = 5, cutree_cols =5,
+legend = T,
+fontsize = 11,
+color=colorRampPalette(c("navy", "white", "red"))(50))
+# Load libraries
+library(agricolae)
+library(ggplot2)
+library(dplyr)
+# Load your dataset
+data <- read.csv(file.choose())
+head(data)
+# Convert relevant columns to factor
+data$Rep <- as.factor(data$Rep)
+data$Date <- as.factor(data$Date)
+data$Trt  <- as.factor(data$Trt)
+# Remove rows with missing GY
+data <- data[!is.na(data$GY), ]
+# Split-plot ANOVA
+model <- with(data, sp.plot(Rep, Date, Trt, GY))
+gla <- model$gl.a
+glb <- model$gl.b
+Ea  <- model$Ea
+Eb  <- model$Eb
+# Create interaction variable
+data$DateTrt <- interaction(data$Date, data$Trt, sep = " × ")
+# LSD test on interaction
+out3 <- with(data, LSD.test(GY, DateTrt, glb, Eb, console = TRUE))
+# Extract means and groups
+means_df <- out3$means %>%
+mutate(DateTrt = rownames(.)) %>%
+left_join(
+out3$groups %>%
+mutate(DateTrt = rownames(.)) %>%
+select(DateTrt, groups),
+by = "DateTrt"
+)
+# Fix SE column if missing
+if (!"SE" %in% colnames(means_df)) {
+means_df$SE <- means_df$std  # Use 'std' from agricolae if 'SE' not present
+}
+# Assign significance stars based on group (this is illustrative)
+means_df <- means_df %>%
+mutate(
+star = case_when(
+grepl("a", groups) ~ "***",
+grepl("b", groups) ~ "**",
+grepl("c", groups) ~ "*",
+TRUE ~ ""
+)
+)
+# Create new label: Mean ± SE with star
+means_df <- means_df %>%
+mutate(label = paste0(round(GY, 2), " ± ", round(SE, 2), " ", star))
+# ✅ Print formatted table
+cat("🔢 Interaction Means ± SE with Significance Stars:\n")
+print(means_df[, c("DateTrt", "GY", "SE", "star", "label")], row.names = FALSE)
+# Plot with ggplot2
+ggplot(means_df, aes(x = DateTrt, y = GY)) +
+geom_bar(stat = "identity", aes(fill = DateTrt), width = 0.7, color = "black") +
+geom_errorbar(aes(ymin = GY - SE, ymax = GY + SE), width = 0.2) +
+geom_text(aes(label = star, y = GY + SE + 0.4), size = 6, color = "red") +  # significance stars
+labs(title = "",
+x = "Date × Treatment",
+y = "Grain Yield (t/ha)") +
+theme_minimal(base_size = 14) +
+theme(
+axis.text.x = element_text(angle = 69, hjust = 1),
+plot.title = element_text(face = "bold", hjust = 0.5),
+legend.position = "none",
+panel.grid.major = element_blank(),  # Removes major grid lines
+panel.grid.minor = element_blank()   # Removes minor grid lines
+) +
+scale_fill_brewer(palette = "Set2")
+setwd("I:/My Drive/Batch - 5/Code and sample data/Bonus/Split plot/Interaction Figure")
+## save code
+ggsave("interaction_plot_GY.png", device = "png", dpi = 1000, width = 10, height = 6, units = "in")
