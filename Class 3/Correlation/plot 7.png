@@ -1,0 +1,512 @@
+###Data load
+data<-read.csv(file.choose())
+head(data)
+View(data)
+tail(data)
+str(data)
+rownames(data)<-c(data$Gen)
+head(data)
+newdata<-data[,-1]
+head(newdata)
+df1<-newdata
+df <- na.omit(df1)
+df2 <- scale(df)
+head(df2)
+##Dissimilarity matrix/distance matrix
+res.dist<-dist(df1, method="euclidean")
+res.hc<-hclust(d=res.dist, method="ward.D2")
+plot(x=res.hc) #plot 1
+library(factoextra)
+###Inter and Intra distance
+library(clv)
+hid <-cls.scatt.data(pea.s,hcm)
+print(hid) #use $intercls.average and $intracls.average
+###Data load
+data<-read.csv(file.choose()) #with cluster
+head(data)
+rownames(data)<-c(data$Accession)
+rownames(data)<-c(data$Gen)
+head(data)
+data1 <-data[,-1]
+head(data1)
+####Data load
+pea<-read.csv(file.choose()) #without cluster
+head(pea)
+pea<- df
+# Determine number of clusters
+wss <- (nrow(pea)-1)*sum(apply(pea,2,var))
+for (i in 2:11) wss[i] <- sum(kmeans(pea,
+centers=i)$withinss)
+plot(1:10, wss, type="b", xlab="Number of Clusters",
+ylab="Within groups sum of squares")
+####Scaling####
+pea.s <-scale(pea)
+pea.s
+####dissimilarity matrix####
+d <-dist (pea.s)
+options (max.print=100000)
+d
+library(NbClust)
+wardse <-hclust(d,"ward.D2")
+hcm <-cutree(wardse, k=5) #k means the number of cluster
+hcm #sort your data according to the output groups
+###Load the library
+library("pheatmap")
+install.packages("pheatmap")
+###Load the library
+library("pheatmap")
+###Load the library
+library("pheatmap")
+install.packages("pheatmap")
+###Load the library
+library("pheatmap")
+###Load the data
+data<-read.csv(file.choose()) #without cluster
+###Load the data
+data<-read.csv(file.choose()) #without cluster
+head(data)
+rownames(data)<-c(data$Interaction  )
+head(data)
+newdata<-data [ , -1]
+head(newdata)
+matx <- scale(newdata)
+heatmap(matx, scale = "row")
+###Draw Heatmap with Row & Column Clusters (Euclidean", "ward.D2", method )
+pheatmap(matx,
+color=colorRampPalette(c("navy", "white", "red"))(50))
+pheatmap(matx,
+clustering_distance_rows = "euclidean",
+clustering_distance_cols = "euclidean", clustering_method = "ward.D2",
+cutree_rows = 5, cutree_cols =5,
+legend = T,
+fontsize = 11,
+color=colorRampPalette(c("navy", "white", "red"))(50))
+###Draw Heatmap with Row & Column Clusters (Euclidean", "ward.D2", method )
+pheatmap(matx,
+color=colorRampPalette(c("navy", "white", "red"))(50))
+pheatmap(matx,
+clustering_distance_rows = "euclidean",
+clustering_distance_cols = "euclidean", clustering_method = "ward.D2",
+cutree_rows = 5, cutree_cols =5,
+legend = T,
+fontsize = 11,
+color=colorRampPalette(c("navy", "white", "red"))(50))
+head(data)
+str(data)
+rownames(data)<-c(data$Interaction  )
+head(data)
+newdata<-data [ , -1]
+head(newdata)
+matx <- scale(newdata)
+heatmap(matx, scale = "row")
+###Draw Heatmap with Row & Column Clusters (Euclidean", "ward.D2", method )
+pheatmap(matx,
+color=colorRampPalette(c("navy", "white", "red"))(50))
+###Draw Heatmap with Row & Column Clusters (Euclidean", "ward.D2", method )
+pheatmap(matx,
+color=colorRampPalette(c("navy", "white", "red"))(50))
+pheatmap(matx,
+clustering_distance_rows = "euclidean",
+clustering_distance_cols = "euclidean", clustering_method = "ward.D2",
+cutree_rows = 5, cutree_cols =5,
+legend = T,
+fontsize = 11,
+color=colorRampPalette(c("navy", "white", "red"))(50))
+# loading the appropriate libraries
+library(readr)
+library(ggplot2)
+# loading and checking the data
+data1 <- read.csv(file.choose())
+print(data1)
+str(data1)
+## $ D    : num see the D colum from str the column is in Numerical
+## We should Convert it to categorical Data
+data1$D1<-as.factor(data1$Gen) ## Convert numerical D to a new D1 column which is categorical
+View(data1) #$#A new D1 column Created
+str(data1)
+# Gray-scale barplot
+ggplot(data1, aes(D1, mean)) +
+geom_bar(stat = "identity", width=0.6, alpha=1) ## change width and alpha from 0 t0 1 to change width and Transperancy ( here 60% and 100%)
+# Gray-scale barplot
+ggplot(data1, aes(D1, mean)) +
+geom_bar(stat = "identity", width=0.4, alpha=1) ## change width and alpha from 0 t0 1 to change width and Transperancy ( here 60% and 100%)
+# Gray-scale barplot
+ggplot(data1, aes(D1, mean)) +
+geom_bar(stat = "identity", width=0.4, alpha=0.5) ## change width and alpha from 0 t0 1 to change width and Transperancy ( here 60% and 100%)
+df <- data.frame(
+species = c("Wheat","Wheat","Rice","Rice","Rice","Maize","Maize")
+)
+df
+# Plot with stat = "count"
+ggplot(df, aes(x = species)) +
+geom_bar(stat = "count", fill = "skyblue") +
+ggtitle("stat = 'count'")
+# Adding error bars
+ggplot(data1, aes(D1, mean)) +
+geom_bar(stat = "identity", width=0.8, alpha=1) +
+geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=0.5) # Adding error bars
+# Adding error bars
+ggplot(data1, aes(D1, mean)) +
+geom_bar(stat = "identity", width=0.8, alpha=1) +
+geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width=0.2) # Adding error bars
+#Customizing x and y titles
+ggplot(data1, aes(D1, mean)) +
+geom_bar(stat = "identity", width=0.8, alpha=0.8) +
+geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width = 0.2) +
+labs(x="Genotype", y="Yield")  ##Customizing x and y titles
+#Formating the overall visualisation
+ggplot(data1, aes(D1, mean)) +
+geom_bar(stat = "identity", width=0.8, alpha=0.8) +
+geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width = 0.2) +
+labs(x="Genotype", y="Yield") +
+theme_bw() +
+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) ## remove BG and major and minor Grid
+#Adding the compact letter display from Tukey’s test
+ggplot(data1, aes(D1, mean)) +
+geom_bar(stat = "identity", width=0.8, alpha=0.8) +
+geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width = 0.2) +
+labs(x="Genotype", y="Yield") +
+theme_bw() +
+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
+geom_text(aes(label=Tukey)) ## Add lettering
+#Define their position
+ggplot(data1, aes(D1, mean)) +
+geom_bar(stat = "identity", width=0.8, alpha=0.8) +
+geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width = 0.2) +
+labs(x="Genotype", y="Yield") +
+theme_bw() +
+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
+geom_text(aes(label=Tukey), nudge_x = 0, nudge_y = 8, size = 5) ## replace left and upper, respectively
+#Define their position
+ggplot(data1, aes(D1, mean)) +
+geom_bar(stat = "identity", width=0.8, alpha=0.8) +
+geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width = 0.2) +
+labs(x="Genotype", y="Yield") +
+theme_bw() +
+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
+geom_text(aes(label=Tukey), nudge_x = 2, nudge_y = 8, size = 5) ## replace left and upper, respectively
+#Define their position
+ggplot(data1, aes(D1, mean)) +
+geom_bar(stat = "identity", width=0.8, alpha=0.8) +
+geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width = 0.2) +
+labs(x="Genotype", y="Yield") +
+theme_bw() +
+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
+geom_text(aes(label=Tukey), nudge_x = 0.2, nudge_y = 8, size = 5) ## replace left and upper, respectively
+#Define their position
+ggplot(data1, aes(D1, mean)) +
+geom_bar(stat = "identity", width=0.8, alpha=0.8) +
+geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width = 0.2) +
+labs(x="Genotype", y="Yield") +
+theme_bw() +
+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
+geom_text(aes(label=Tukey), nudge_x = 0.2, nudge_y = 8, size = 7) ## replace left and upper, respectively
+##Adding colors to the barplots
+ggplot(data1, aes(D1, mean)) +
+geom_bar(stat = "identity", width=0.8, alpha=0.8, fill = "steelblue") +   # change color to add another color
+geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width = 0.2, color = "black") +
+labs(x="Genotype", y="Yield") +
+theme_bw() +
+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
+geom_text(aes(label=Tukey), nudge_x = 0.25, nudge_y = 5, size = 3, color = "black")
+##Barplots colored according Tukey’s test results
+ggplot(data1, aes(D1, mean, fill = Tukey)) + ## fill color according to lettering
+geom_bar(stat = "identity", width=0.8, alpha=0.8) +
+geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width = 0.2) +
+labs(x="Genotype", y="Yield") +
+theme_bw() +
+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
+geom_text(aes(label=Tukey), nudge_x = 0, nudge_y = 5, size = 3)
+# colored barplot according Tukey's test results
+ggplot(data1, aes(D1, mean, fill = Tukey)) +
+geom_bar(stat = "identity", width=0.8, alpha=0.8, show.legend = FALSE) +
+scale_fill_brewer(palette = "BrBG") +  ## change color palette for better visualization
+geom_errorbar(aes(ymin=mean-sd, ymax=mean+sd), width = 0.2) +
+labs(x="Genotype", y="Yield") +
+theme_bw() +
+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
+geom_text(aes(label=Tukey), nudge_x = 0.25, nudge_y = 5, size = 3)
+setwd("I:/My Drive/Batch - 5/Code and sample data/Class 3/Diagrams/Barplot")
+# saving the final figure
+ggsave("barplot.png", width = 4, height = 3, dpi = 1000)
+data1<-read.csv(file.choose())
+#Check the data
+head(data1)
+# Create a boxplot by using geom_boxplot() function of ggplot2 package
+library(ggplot2)
+#modify the name of x and y axis as required
+crop = ggplot(data = data1, mapping = aes(x=Gen, y=weight))+
+geom_boxplot()
+crop
+ggplot(data1, aes(x = Gen, y = weight, fill = Gen)) +
+geom_boxplot() + theme(legend.position = "top") +
+stat_summary(fun = "mean", geom = "point", shape = 1,
+size = 2, color = "black")
+# add mean to ggplot2 boxplot, legend position
+ggplot(data1, aes(x = Gen, y = weight, fill = Gen)) +
+geom_boxplot() + theme(legend.position = "top") +
+stat_summary(fun = "mean", geom = "point", shape = 3,
+size = 2, color = "black")
+# add mean to ggplot2 boxplot, legend position
+ggplot(data1, aes(x = Gen, y = weight, fill = Gen)) +
+geom_boxplot() + theme(legend.position = "top") +
+stat_summary(fun = "mean", geom = "point", shape = 3,
+size = 1, color = "black")
+# add mean to ggplot2 boxplot, legend position
+ggplot(data1, aes(x = Gen, y = weight, fill = Gen)) +
+geom_boxplot() + theme(legend.position = "top") +
+stat_summary(fun = "mean", geom = "point", shape = 1,
+size = 1, color = "black")
+# add mean to ggplot2 boxplot, legend position
+ggplot(data1, aes(x = Gen, y = weight, fill = Gen)) +
+geom_boxplot() + theme(legend.position = "top") +
+stat_summary(fun = "mean", geom = "point", shape = 1,
+size = 2, color = "black")
+# add mean to ggplot2 boxplot, legend position
+ggplot(data1, aes(x = Gen, y = weight, fill = Gen)) +
+geom_boxplot() + theme(legend.position = "top") +
+stat_summary(fun = "mean", geom = "point", shape = 1,
+size = 2, color = "black")+
+### modify You theme and Tittle
+theme_minimal() +  # Clean theme
+theme_bw() +
+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+ ## remove grids and BG
+theme(legend.position = "bottom", # blank position if you want to remove the legends
+axis.text.x = element_text(angle = 45, hjust = 1, size = 12),  # Rotate x-axis labels
+axis.title = element_text(size = 14, face = "bold"),
+plot.title = element_text(size = 16, face = "bold", hjust = 0.5)) +  # Title customization
+labs(title = "Weight Distribution by Genotype",
+x = "Genotype",
+y = "Weight (g)",
+fill = "Genotype",
+color = "Genotype")  # Customized labels
+# add mean to ggplot2 boxplot, legend position
+ggplot(data1, aes(x = Gen, y = weight, fill = Gen)) +
+geom_boxplot() + theme(legend.position = "top") +
+stat_summary(fun = "mean", geom = "point", shape = 1,
+size = 2, color = "black")+
+### modify You theme and Tittle
+theme_minimal() +  # Clean theme
+theme_bw() +
+theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+ ## remove grids and BG
+theme(legend.position = "", # blank position if you want to remove the legends
+axis.text.x = element_text(angle = 45, hjust = 1, size = 12),  # Rotate x-axis labels
+axis.title = element_text(size = 14, face = "bold"),
+plot.title = element_text(size = 16, face = "bold", hjust = 0.5)) +  # Title customization
+labs(title = "Weight Distribution by Genotype",
+x = "Genotype",
+y = "Weight (g)",
+fill = "Genotype",
+color = "Genotype")  # Customized labels
+data1<-read.csv(file.choose())
+#Check the data
+head(data1)
+library(ggplot2)
+library(tidyverse)
+library(hrbrthemes)
+library(viridis)
+# Create a violin plot
+library(ggplot2)
+library(tidyverse)
+library(hrbrthemes)
+library(viridis)
+# Violin basic
+data1 %>%                                  ##data1 to be passed directly into ggplot() for better readability
+ggplot( aes(x=Group , y=Protein..aa., fill=Group )) + ## modify X and Y axis as you need for Your data
+geom_violin() +
+scale_fill_viridis(discrete = T, alpha=0.1, option="A") +
+# alpha value define Transparency (here 0.1= 10%) of the graph Change it O to 1
+theme_ipsum() +                  ## Applies the modern and minimalist theme and remove Unnecessary grid line
+theme(
+plot.title = element_text(size=11) # change plot title size
+) +
+ggtitle("") + ## Add you title of the graph in quotation mark
+xlab("")      ## Add X axis level
+## Copy Group and  Protein..aa. from the head result and  modify AA with  and  BB with to Group and  Protein..aa.
+ggplot(data1, aes(x = Group, y = Protein..aa., fill = Group)) +
+geom_violin(alpha = 1, trim = FALSE) +   ## remove trim = FALSE and and see the result
+geom_dotplot(binaxis = "y",
+stackdir = "center",
+dotsize = 1.1, ##change dot size to fit the dot to plot area
+fill=1) +
+theme(
+panel.background = element_blank(),  # Remove only the plot area background
+plot.background = element_blank(),    # Remove the background of the whole plot
+axis.line = element_line(color = "black", size = 0.7),  # Keep axis lines
+axis.ticks = element_line(color = "black", size = 0,7)  # Keep axis ticks
+)
+## Copy Group and  Protein..aa. from the head result and  modify AA with  and  BB with to Group and  Protein..aa.
+ggplot(data1, aes(x = Group, y = Protein..aa., fill = Group)) +
+geom_violin(alpha = 1, trim = FALSE) +   ## remove trim = FALSE and and see the result
+geom_dotplot(binaxis = "y",
+stackdir = "center",
+dotsize = 1.1, ##change dot size to fit the dot to plot area
+fill=1) +
+theme(
+panel.background = element_blank(),  # Remove only the plot area background
+plot.background = element_blank(),    # Remove the background of the whole plot
+axis.line = element_line(color = "black", size = 0.7),  # Keep axis lines
+axis.ticks = element_line(color = "black", size = 0.7)  # Keep axis ticks
+)
+## Copy Group and  Protein..aa. from the head result and  modify AA with  and  BB with to Group and  Protein..aa.
+ggplot(data1, aes(x = Group, y = Protein..aa., fill = Group)) +
+geom_violin(alpha = 1, trim = FALSE) +   ## remove trim = FALSE and and see the result
+geom_dotplot(binaxis = "y",
+stackdir = "center",
+dotsize = 1.1, ##change dot size to fit the dot to plot area
+fill=1) +
+theme(
+panel.background = element_blank(),  # Remove only the plot area background
+plot.background = element_blank(),    # Remove the background of the whole plot
+axis.line = element_line(color = "black", size = 0.7),  # Keep axis lines
+axis.ticks = element_line(color = "black", size = 0.9)  # Keep axis ticks
+)
+## Copy Group and  Protein..aa. from the head result and  modify AA with  and  BB with to Group and  Protein..aa.
+ggplot(data1, aes(x = Group, y = Protein..aa., fill = Group)) +
+geom_violin(alpha = 1, trim = FALSE) +   ## remove trim = FALSE and and see the result
+geom_dotplot(binaxis = "y",
+stackdir = "center",
+dotsize = 1, ##change dot size to fit the dot to plot area
+fill=1) +
+theme(
+panel.background = element_blank(),  # Remove only the plot area background
+plot.background = element_blank(),    # Remove the background of the whole plot
+axis.line = element_line(color = "black", size = 0.7),  # Keep axis lines
+axis.ticks = element_line(color = "black", size = 0.9)  # Keep axis ticks
+)
+## Copy Group and  Protein..aa. from the head result and  modify AA with  and  BB with to Group and  Protein..aa.
+ggplot(data1, aes(x = Group, y = Protein..aa., fill = Group)) +
+geom_violin(alpha = 1, trim = FALSE) +   ## remove trim = FALSE and and see the result
+geom_dotplot(binaxis = "y",
+stackdir = "center",
+dotsize = 0.8, ##change dot size to fit the dot to plot area
+fill=1) +
+theme(
+panel.background = element_blank(),  # Remove only the plot area background
+plot.background = element_blank(),    # Remove the background of the whole plot
+axis.line = element_line(color = "black", size = 0.7),  # Keep axis lines
+axis.ticks = element_line(color = "black", size = 0.9)  # Keep axis ticks
+)
+head(data1)
+source("I:/My Drive/Batch - 5/Code and sample data/Class 3/Diagrams/Violin Plot/3.Code for Violin plot.R", echo = TRUE)
+library(ggplot2)
+library(tidyverse)
+library(hrbrthemes)
+library(viridis)
+# Violin basic
+data1 %>%                                  ##data1 to be passed directly into ggplot() for better readability
+ggplot( aes(x=Group , y=Mol.Weight..kDa., fill=Group )) + ## modify X and Y axis as you need for Your data
+geom_violin() +
+scale_fill_viridis(discrete = T, alpha=0.1, option="A") +
+# alpha value define Transparency (here 0.1= 10%) of the graph Change it O to 1
+theme_ipsum() +                  ## Applies the modern and minimalist theme and remove Unnecessary grid line
+theme(
+plot.title = element_text(size=11) # change plot title size
+) +
+ggtitle("") + ## Add you title of the graph in quotation mark
+xlab("")      ## Add X axis level
+# saving the final figure
+ggsave("violinplot.png", width = 4, height = 3, dpi = 1000)
+Load ggplot2
+## Copy Group and  Mol.Weight..kDa. from the head result and  modify AA with  and  BB with to Group and  Mol.Weight..kDa.
+ggplot(data1, aes(x = Group, y = Mol.Weight..kDa., fill = Group)) +
+geom_violin(alpha = 1, trim = FALSE) +   ## remove trim = FALSE and and see the result
+geom_dotplot(binaxis = "y",
+stackdir = "center",
+dotsize = 0.8, ##change dot size to fit the dot to plot area
+fill=1) +
+theme(
+panel.background = element_blank(),  # Remove only the plot area background
+plot.background = element_blank(),    # Remove the background of the whole plot
+axis.line = element_line(color = "black", size = 0.7),  # Keep axis lines
+axis.ticks = element_line(color = "black", size = 0.9)  # Keep axis ticks
+)
+#install and load the library
+library (doebioresearch)
+#Read Table #
+data <- read.csv(file.choose())
+View(data)
+head(data)
+d1 <- crd(data[2:7],data$Treatments,1)  # 0 for no test, 1 for LSD, 2 for DMRT
+# view results
+d1
+#Read Table #
+data<-read.csv(file.choose())
+head(data)
+d1<- rcbd(data[3:8],data$Gen,data$Rep,1) # 0 for no test, 1 for LSD, 2 for DMRT
+d1
+library (doebioresearch)
+#Read Table #
+data<-read.csv(file.choose())
+head(data)
+d1<- frbd2fact(data[4:8],data$Variety,data$Treatment,data$Rep,1) # 0 for no test, 1 for LSD, 2 for DMRT
+d1
+d1<- frbd2fact(data[4:8],data$Rep,data$Variety,data$Treatment,1) # 0 for no test, 1 for LSD, 2 for DMRT
+d1
+my_data <- read.csv(file.choose())
+head(my_data)
+d <- my_data[,c(-1)]
+d
+cor(d)
+mat <-cor(d)
+library (corrplot)
+corrplot(mat) #plot 1
+corrplot(mat,method="square", type="upper")
+corrplot(mat,method="circle", type="lower")
+library(metan)
+data<- read.csv(file.choose)
+library(metan)
+data<- read.csv(file.choose)
+data<- read.csv(file.choose())
+d <- data[, c(-1)]
+ALL=corr_coef(d)
+ALL
+plot(ALL)
+#plot 7
+corrplot(corr_mat, method = "color", outline = T, addgrid.col = "darkgray", order="hclust",
+addrect = 4, rect.col = "black", rect.lwd = 5,cl.pos = "b", tl.col = "indianred4",
+tl.cex = 1.5, cl.cex = 1.5, addCoef.col = "white", number.digits = 2, number.cex = 0.75,
+col = colorRampPalette(c("darkred","white","midnightblue"))(100))
+library(RColorBrewer)
+M <-cor(d)
+#plot 4
+corrplot(M, p.mat = testRes$p, method = 'ellipse', diag = FALSE, type = 'full', sig.level = c(0.001, 0.01, 0.05), pch.cex = 1, insig = 'label_sig', pch.col = 'grey20', order = 'AOE')
+#plot 7
+corrplot(corr_mat, method = "color", outline = T, addgrid.col = "darkgray", order="hclust",
+addrect = 4, rect.col = "black", rect.lwd = 5,cl.pos = "b", tl.col = "indianred4",
+tl.cex = 1.5, cl.cex = 1.5, addCoef.col = "white", number.digits = 2, number.cex = 0.75,
+col = colorRampPalette(c("darkred","white","midnightblue"))(100))
+corr_mat=cor(mat,method="s")
+corr_mat[1:10,1:10]
+corrplot(corr_mat)  #plot 3
+# Draw corrplot with p-values
+corrplot(mat,
+p.mat = mat,
+type= "lower")
+# Select variables
+Some=corr_coef(d, Chl,LAI, tw,  GSV, H, Glu, TW)
+Some
+plot(Some)
+library(RColorBrewer)
+M <-cor(d)
+testRes = cor.mtest(d, conf.level = 0.95)
+#plot 4
+corrplot(M, p.mat = testRes$p, method = 'ellipse', diag = FALSE, type = 'full', sig.level = c(0.001, 0.01, 0.05), pch.cex = 1, insig = 'label_sig', pch.col = 'grey20', order = 'AOE')
+#plot 5
+corrplot(M, p.mat = testRes$p, method = 'color', diag = FALSE, type = 'upper',
+sig.level = c(0.001, 0.01, 0.05), pch.cex = 2,
+insig = 'label_sig', pch.col = 'grey20', order = 'AOE')
+#plot 6
+corrplot(M, p.mat = testRes$p, method = 'ellipse', diag = TRUE, type = 'lower',
+sig.level = c(0.001, 0.01, 0.05), pch.cex = 2,
+insig = 'label_sig', pch.col = 'green4', order = 'AOE')
+library(PerformanceAnalytics)
+chart.Correlation(cor(d)) #chart 1
+library(lares)
+corr_cross(d, rm.na = T, max_pvalue = 0.05, top = 15, grid = T) #plot 8
+library(ggplot2)
+setwd("I:/My Drive/Batch - 5/Code and sample data/Class 3/Correlation")
+# saving the final figure
+ggsave("Correlation.png", width = 4, height = 3, dpi = 1000)
+# saving the final figure
+ggsave("Correlation22.png", width = 4, height = 3, dpi = 1000)
