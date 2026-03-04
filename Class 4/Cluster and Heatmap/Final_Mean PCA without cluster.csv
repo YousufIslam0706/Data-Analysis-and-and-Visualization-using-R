@@ -1,0 +1,73 @@
+# Load necessary libraries
+library(ComplexHeatmap)
+library(circlize)
+
+# Read your data
+data <- read.csv(file.choose(), row.names = 1)
+
+# Convert to numeric matrix safely
+mat <- as.matrix(sapply(data, as.numeric))
+mat[is.na(mat)] <- 0  # Handle NAs
+
+# Build dendrograms for clustering
+row_dend <- as.dendrogram(hclust(dist(mat), method = "ward.D2"))
+col_dend <- as.dendrogram(hclust(dist(t(mat)), method = "ward.D2"))
+
+# Define continuous color gradient for heatmap
+col_fun <- colorRamp2(
+  c(min(mat), mean(mat), max(mat)), 
+  c("red", "yellow", "#008080")  # red = resistant, yellow = intermediate, teal = sensitive
+)
+
+# Plot full-featured heatmap with full dendrograms
+Heatmap(
+  mat,
+  name = "Value",
+  cluster_rows = row_dend,
+  cluster_columns = col_dend,
+  col = col_fun,
+  show_row_names = TRUE,
+  show_column_names = TRUE,
+  row_names_gp = gpar(fontsize = 10),
+  column_names_gp = gpar(fontsize = 10),
+  row_dend_reorder = FALSE,
+  column_dend_reorder = FALSE,
+  heatmap_legend_param = list(
+    title = "Scale",
+    at = c(min(mat), mean(mat), max(mat)),
+    labels = c("Resistant", "Intermediate", "Sensitive")
+  )
+)
+
+
+pheatmap(
+  mat,
+  clustering_method = "ward.D2",        # Hierarchical clustering
+  clustering_distance_rows = "euclidean",
+  clustering_distance_cols = "euclidean",
+  color = color_map,
+  cutree_rows = 3,                      # Cut rows into 3 clusters
+  cutree_cols = 3,                      # Cut cols into 3 clusters
+  show_rownames = TRUE,
+  show_colnames = TRUE,
+  fontsize_row = 12 ,
+  fontsize_col = 12,
+  border_color = "grey70"
+)
+
+
+
+pheatmap(
+  mat,
+  clustering_method = "ward.D2",        # Hierarchical clustering
+  clustering_distance_rows = "euclidean",
+  clustering_distance_cols = "euclidean",
+  color = color_map,
+  cutree_rows = 3,                      # Cut rows into 3 clusters
+  cutree_cols = 3,                      # Cut cols into 3 clusters
+  show_rownames = TRUE,
+  show_colnames = TRUE,
+  fontsize_row = 12 ,
+  fontsize_col = 12,
+  border_color = "grey70"
+)

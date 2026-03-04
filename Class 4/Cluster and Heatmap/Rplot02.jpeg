@@ -1,0 +1,29 @@
+### Load the library
+library(pheatmap)
+library(RColorBrewer)
+
+### Load the data
+data <- read.csv(file.choose(), row.names = 1)  # First column = SampleID
+
+# Convert to numeric matrix
+mat <- as.matrix(sapply(data, as.numeric))
+rownames(mat) <- rownames(data)
+
+### Define colour map (0 = blue, 1 = red)
+color_map <- c("blue", "red")
+
+### Plot heatmap with hierarchical clustering and cutree
+pheatmap(
+  mat,
+  clustering_method = "ward.D2",        # Hierarchical clustering
+  clustering_distance_rows = "euclidean",
+  clustering_distance_cols = "euclidean",
+  color = color_map,
+  cutree_rows = 3,                      # Cut rows into 3 clusters
+  cutree_cols = 4,                      # Cut cols into 3 clusters
+  show_rownames = TRUE,
+  show_colnames = TRUE,
+  fontsize_row = 8,
+  fontsize_col = 10,
+  border_color = "grey70"
+)
