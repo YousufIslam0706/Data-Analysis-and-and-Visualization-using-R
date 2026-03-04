@@ -1,0 +1,215 @@
+$PH
+$PH[[1]]
+Analysis of Variance Table
+
+Response: data2
+            Df Sum Sq Mean Sq F value    Pr(>F)    
+replication  2  54.03 27.0131  14.597 2.279e-05 ***
+genotype    18 509.32 28.2954  15.290 8.498e-12 ***
+Residuals   36  66.62  1.8506                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+$PH[[2]]
+                                            A
+Maximum                               29.0200
+Minimum                               13.5400
+Grand Mean                            19.8691
+Standard Error of Mean (SEm)           0.7854
+Critical Difference (CD) 5%            2.2527
+Critical Difference (CD) 1%            3.0206
+Environmental Variance                 1.8506
+Genotypic Variance                     8.8149
+Phenotypic Variance                   10.6655
+Environmental Coefficient of Variance  6.8467
+Genotypic Coefficient of Variance     14.9428
+Phenotypic Coefficient of Variance    16.4367
+Heritability (Broad Sense)             0.8265
+Genetic Advance                        5.5602
+Genetic Advance as percentage of mean 27.9842
+
+
+$SBD
+$SBD[[1]]
+Analysis of Variance Table
+
+Response: data2
+            Df Sum Sq Mean Sq F value  Pr(>F)    
+replication  2  1.265  0.6323   4.896 0.01316 *  
+genotype    18 87.696  4.8720  37.725 < 2e-16 ***
+Residuals   36  4.649  0.1291                    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+$SBD[[2]]
+                                            A
+Maximum                                8.9200
+Minimum                                4.1230
+Grand Mean                             5.7546
+Standard Error of Mean (SEm)           0.2075
+Critical Difference (CD) 5%            0.5951
+Critical Difference (CD) 1%            0.7980
+Environmental Variance                 0.1291
+Genotypic Variance                     1.5810
+Phenotypic Variance                    1.7101
+Environmental Coefficient of Variance  6.2448
+Genotypic Coefficient of Variance     21.8498
+Phenotypic Coefficient of Variance    22.7244
+Heritability (Broad Sense)             0.9245
+Genetic Advance                        2.4905
+Genetic Advance as percentage of mean 43.2782
+
+
+$L.P
+$L.P[[1]]
+Analysis of Variance Table
+
+Response: data2
+            Df Sum Sq Mean Sq F value    Pr(>F)    
+replication  2  6.024  3.0121  696.25 < 2.2e-16 ***
+genotype    18 77.698  4.3166  997.79 < 2.2e-16 ***
+Residuals   36  0.156  0.0043                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+$L.P[[2]]
+                                            A
+Maximum                               11.8700
+Minimum                                6.1000
+Grand Mean                             8.9437
+Standard Error of Mean (SEm)           0.0380
+Critical Difference (CD) 5%            0.1089
+Critical Difference (CD) 1%            0.1460
+Environmental Variance                 0.0043
+Genotypic Variance                     1.4374
+Phenotypic Variance                    1.4417
+Environmental Coefficient of Variance  0.7354
+Genotypic Coefficient of Variance     13.4052
+Phenotypic Coefficient of Variance    13.4252
+Heritability (Broad Sense)             0.9970
+Genetic Advance                        2.4661
+Genetic Advance as percentage of mean 27.5736
+
+
+$SW
+$SW[[1]]
+Analysis of Variance Table
+
+Response: data2
+            Df Sum Sq Mean Sq F value    Pr(>F)    
+replication  2   4.97  2.4857  27.254 6.209e-08 ***
+genotype    18 488.90 27.1611 297.806 < 2.2e-16 ***
+Residuals   36   3.28  0.0912                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+$SW[[2]]
+                                            A
+Maximum                               15.2300
+Minimum                                3.2800
+Grand Mean                             7.3319
+Standard Error of Mean (SEm)           0.1744
+Critical Difference (CD) 5%            0.5001
+Critical Difference (CD) 1%            0.6706
+Environmental Variance                 0.0912
+Genotypic Variance                     9.0233
+Phenotypic Variance                    9.1145
+Environmental Coefficient of Variance  4.1190
+Genotypic Coefficient of Variance     40.9699
+Phenotypic Coefficient of Variance    41.1764
+Heritability (Broad Sense)             0.9900
+Genetic Advance                        6.1570
+Genetic Advance as percentage of mean 83.9752
+
+
+$RW
+$RW[[1]]
+Analysis of Variance Table
+
+Response: data2
+            Df Sum Sq  Mean Sq F value    Pr(>F)    
+replication  2 0.0325 0.016235  51.686  2.62e-11 ***
+genotype    18 3.4600 0.192224 611.988 < 2.2e-16 ***
+Residuals   36 0.0113 0.000314                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+$RW[[2]]
+                                            A
+Maximum                                1.1990
+Minimum                                0.1330
+Grand Mean                             0.5304
+Standard Error of Mean (SEm)           0.0102
+Critical Difference (CD) 5%            0.0293
+Critical Difference (CD) 1%            0.0394
+Environmental Variance                 0.0003
+Genotypic Variance                     0.0640
+Phenotypic Variance                    0.0643
+Environmental Coefficient of Variance  3.3416
+Genotypic Coefficient of Variance     47.6993
+Phenotypic Coefficient of Variance    47.8110
+Heritability (Broad Sense)             0.9953
+Genetic Advance                        0.5199
+Genetic Advance as percentage of mean 98.0262
+
+
+$STW
+$STW[[1]]
+Analysis of Variance Table
+
+Response: data2
+            Df  Sum Sq Mean Sq F value    Pr(>F)    
+replication  2   1.526  0.7630  100.64 1.816e-15 ***
+genotype    18 127.290  7.0717  932.67 < 2.2e-16 ***
+Residuals   36   0.273  0.0076                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+$STW[[2]]
+                                            A
+Maximum                                8.0080
+Minimum                                1.2800
+Grand Mean                             3.5401
+Standard Error of Mean (SEm)           0.0503
+Critical Difference (CD) 5%            0.1442
+Critical Difference (CD) 1%            0.1933
+Environmental Variance                 0.0076
+Genotypic Variance                     2.3547
+Phenotypic Variance                    2.3623
+Environmental Coefficient of Variance  2.4597
+Genotypic Coefficient of Variance     43.3467
+Phenotypic Coefficient of Variance    43.4166
+Heritability (Broad Sense)             0.9968
+Genetic Advance                        3.1560
+Genetic Advance as percentage of mean 89.1508
+
+
+$FY
+$FY[[1]]
+Analysis of Variance Table
+
+Response: data2
+            Df  Sum Sq Mean Sq  F value    Pr(>F)    
+replication  2    15.2    7.59   56.794 7.333e-12 ***
+genotype    18 11552.0  641.78 4804.624 < 2.2e-16 ***
+Residuals   36     4.8    0.13                       
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+$FY[[2]]
+                                             A
+Maximum                                74.4500
+Minimum                                12.5600
+Grand Mean                             33.6619
+Standard Error of Mean (SEm)            0.2110
+Critical Difference (CD) 5%             0.6052
+Critical Difference (CD) 1%             0.8115
+Environmental Variance                  0.1336
+Genotypic Variance                    213.8811
+Phenotypic Variance                   214.0147
+Environmental Coefficient of Variance   1.0857
+Genotypic Coefficient of Variance      43.4457
+Phenotypic Coefficient of Variance     43.4593
+Heritability (Broad Sense)              0.9994
+Genetic Advance                        30.1174
+Genetic Advance as percentage of mean  89.4702

@@ -1,0 +1,63 @@
+a <- read.csv(file.choose())
+View(a)
+ancova(a[3:9],a$Gen,a$Rep)
+head(a)
+ancova(a[3:9],a$Gen,a$Rep)
+ancova(vardata[3:9],vardata$Gen,vardata$Rep)
+library(variability)
+ancova(a[3:9],a$Gen,a$Rep)
+##### Estimation of Genetic Parameters#####
+gen.var(a[3:9],a$Gen,a$Rep)
+#####Genotypic Correlation Analysis#####
+geno.corr(a[3:9],a$Gen,a$Rep)
+#### Phenotypic Correlation Analysis####
+pheno.corr (a[3:9],a$Gen,a$Rep)
+#### Genotypic Path Analysis####
+geno.path(a[9],a[3:8],a$Gen,a$Rep)
+#### Phenotypic Path Analysis####
+pheno.path(a[9],a[3:8],a$Gen,a$Rep)
+####Data load
+data<-read.csv(file.choose())
+head(data)
+tail(data)
+str(data)
+data$Gen<- as.character(x =data$Gen)
+str(data)
+rownames(data)<-c(data$Gen)
+rownames(data)<-c(data$Gen)
+head(data)
+data1 <-data[,-1]
+head(data1)
+###Load the library
+library("factoextra")
+library("FactoMineR")
+data$Gen<- as.character(x =data$Gen)
+str(data)
+####Data load
+data<-read.csv(file.choose())
+head(data)
+tail(data)
+str(data)
+data$Gen<- as.character(x =data$Gen)
+str(data)
+head(data)
+rownames(data)<-c(data$Gen)
+head(data)
+data1 <-data[,-1]
+head(data1)
+###Load the library
+library("factoextra")
+install.packages("factoextra")
+###Load the library
+library("factoextra")
+###Load the library
+library(factoextra)
+###Load the library
+library(factoextra)
+install.packages("factoextra")
+###Load the library
+library(factoextra)
+###Load the library
+library(factoextra)
+install.packages("factoextra")
+install.packages("FactoMineR")
