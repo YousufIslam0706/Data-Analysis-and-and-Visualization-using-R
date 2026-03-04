@@ -1,0 +1,26 @@
+###Code Written by Yousuf Islam
+# Load necessary libraries
+library(ggplot2)
+library(tidyr)
+
+# Read the data from the CSV file (if you've saved it on your computer)
+data <- read.csv(file.choose())
+
+
+# Reshape the data into long format for ggplot
+data_long <- gather(data, key = "Variable", value = "Value", Stomatal_Conductance:Carbon_Assimilation)
+
+# Plot using ggplot2
+ggplot(plot_data, aes(x = Time, y = Value, color = Variety, group = Variety)) +
+  geom_line() +
+  geom_point(size = 3) +  # Add points to the plot
+  geom_errorbar(aes(ymin = Value - SE, ymax = Value + SE), width = 0.2) +  # Add error bars
+  facet_wrap(~ Condition + Variable, scales = "free_y") +
+  labs(x = "Time (Days)", y = "Measurement Value", 
+       title = "Comparison of Various Plant Traits Over Time") +
+  theme_minimal() +
+  theme(legend.position = "top") +
+  scale_color_manual(values = c("blue", "red", "green", "yellow")) +  # Adjust colors as needed
+  theme(strip.text = element_text(size = 12))  # Customize the facet labels size
+
+
