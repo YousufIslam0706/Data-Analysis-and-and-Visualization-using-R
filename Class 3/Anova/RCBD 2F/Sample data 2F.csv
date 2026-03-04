@@ -1,0 +1,492 @@
+$Grain.yield
+$Grain.yield[[1]]
+Analysis of Variance Table
+
+Response: dependent.var
+                  Df  Sum Sq Mean Sq  F value    Pr(>F)    
+replicationvector  1    82.0    82.0   2.3993    0.1371    
+fact.A             6 24056.5  4009.4 117.3391 1.622e-14 ***
+fact.B             2    58.3    29.1   0.8527    0.4412    
+fact.A:fact.B     12   176.2    14.7   0.4297    0.9323    
+Residuals         20   683.4    34.2                       
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+$Grain.yield[[2]]
+[1] "R Square 0.973"
+
+$Grain.yield[[3]]
+[1] "SEm of A: 2.386 , SEd of A: 3.375 , SEm of B: 1.562 , SEd of B 2.209 , SEm of AB: 4.133 , SEd of AB: 5.845"
+
+$Grain.yield[[4]]
+
+	Shapiro-Wilk normality test
+
+data:  model$residuals
+W = 0.97932, p-value = 0.6352
+
+
+$Grain.yield[[5]]
+[1] "Normality assumption is not violated"
+
+$Grain.yield[[6]]
+[1] "The means of one or more levels of first factor are not same, so go for multiple comparison test"
+
+$Grain.yield[[7]]
+$Grain.yield[[7]][[1]]
+   MSerror Df     Mean       CV  t.value      LSD
+  34.16942 20 61.68952 9.475615 2.085963 7.039874
+
+$Grain.yield[[7]][[2]]
+   dependent.var groups
+T4      93.09833      a
+T5      87.12333      a
+T6      75.69833      b
+T3      68.19500      c
+T2      41.26500      d
+T1      40.28167      d
+T0      26.16500      e
+
+
+$Grain.yield[[8]]
+[1] "All the second factor level means are same so dont go for any multiple comparison test"
+
+$Grain.yield[[9]]
+$Grain.yield[[9]][[1]]
+   MSerror Df     Mean       CV  t.value      LSD
+  34.16942 20 61.68952 9.475615 2.085963 4.608679
+
+$Grain.yield[[9]][[2]]
+  dependent.var groups
+2      63.18571      a
+1      61.57571      a
+3      60.30714      a
+
+
+$Grain.yield[[10]]
+[1] "The means of levels of interaction between two factors are same so dont go for any multiple comparison test"
+
+$Grain.yield[[11]]
+$Grain.yield[[11]][[1]]
+   MSerror Df     Mean       CV  t.value      LSD
+  34.16942 20 61.68952 9.475615 2.085963 12.19342
+
+$Grain.yield[[11]][[2]]
+     dependent.var groups
+T4:1        93.505      a
+T4:3        93.360      a
+T4:2        92.430      a
+T5:2        91.955      a
+T5:1        87.045     ab
+T5:3        82.370    abc
+T6:2        78.260    bcd
+T6:1        77.610    bcd
+T6:3        71.225     cd
+T3:3        70.270     cd
+T3:2        67.880      d
+T3:1        66.435      d
+T2:2        44.250      e
+T1:2        42.740      e
+T2:1        40.895      e
+T1:1        39.980     ef
+T2:3        38.650     ef
+T1:3        38.125     ef
+T0:3        28.150     fg
+T0:1        25.560      g
+T0:2        24.785      g
+
+
+
+$Straw.yield
+$Straw.yield[[1]]
+Analysis of Variance Table
+
+Response: dependent.var
+                  Df  Sum Sq Mean Sq F value    Pr(>F)    
+replicationvector  1     7.2     7.2  0.0937    0.7627    
+fact.A             6 27080.4  4513.4 58.7799 1.183e-11 ***
+fact.B             2    26.3    13.1  0.1712    0.8439    
+fact.A:fact.B     12   141.6    11.8  0.1537    0.9991    
+Residuals         20  1535.7    76.8                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+$Straw.yield[[2]]
+[1] "R Square 0.947"
+
+$Straw.yield[[3]]
+[1] "SEm of A: 3.577 , SEd of A: 5.059 , SEm of B: 2.342 , SEd of B 3.312 , SEm of AB: 6.196 , SEd of AB: 8.763"
+
+$Straw.yield[[4]]
+
+	Shapiro-Wilk normality test
+
+data:  model$residuals
+W = 0.99223, p-value = 0.992
+
+
+$Straw.yield[[5]]
+[1] "Normality assumption is not violated"
+
+$Straw.yield[[6]]
+[1] "The means of one or more levels of first factor are not same, so go for multiple comparison test"
+
+$Straw.yield[[7]]
+$Straw.yield[[7]][[1]]
+   MSerror Df     Mean       CV  t.value      LSD
+  76.78473 20 71.40238 12.27227 2.085963 10.55318
+
+$Straw.yield[[7]][[2]]
+   dependent.var groups
+T4     108.39000      a
+T5      94.57333      b
+T6      83.45167      c
+T3      77.23833      c
+T2      55.92167      d
+T1      50.90167      d
+T0      29.34000      e
+
+
+$Straw.yield[[8]]
+[1] "All the second factor level means are same so dont go for any multiple comparison test"
+
+$Straw.yield[[9]]
+$Straw.yield[[9]][[1]]
+   MSerror Df     Mean       CV  t.value      LSD
+  76.78473 20 71.40238 12.27227 2.085963 6.908681
+
+$Straw.yield[[9]][[2]]
+  dependent.var groups
+3      72.49071      a
+2      71.08286      a
+1      70.63357      a
+
+
+$Straw.yield[[10]]
+[1] "The means of levels of interaction between two factors are same so dont go for any multiple comparison test"
+
+$Straw.yield[[11]]
+$Straw.yield[[11]][[1]]
+   MSerror Df     Mean       CV  t.value      LSD
+  76.78473 20 71.40238 12.27227 2.085963 18.27865
+
+$Straw.yield[[11]][[2]]
+     dependent.var groups
+T4:3       109.155      a
+T4:1       108.805      a
+T4:2       107.210      a
+T5:3        97.860     ab
+T5:2        94.865    abc
+T5:1        90.995   abcd
+T6:1        85.390    bcd
+T6:2        85.135    bcd
+T6:3        79.830    bcd
+T3:3        79.190     cd
+T3:2        76.610    cde
+T3:1        75.915     de
+T2:3        58.855     ef
+T2:1        55.230      f
+T2:2        53.680      f
+T1:2        52.835      f
+T1:3        51.600      f
+T1:1        48.270     fg
+T0:3        30.945     gh
+T0:1        29.830      h
+T0:2        27.245      h
+
+
+
+$X.ca..grain.
+$X.ca..grain.[[1]]
+Analysis of Variance Table
+
+Response: dependent.var
+                  Df   Sum Sq   Mean Sq  F value    Pr(>F)    
+replicationvector  1 0.000402 0.0004024   4.6049   0.04433 *  
+fact.A             6 0.066600 0.0111000 127.0300 7.522e-15 ***
+fact.B             2 0.000919 0.0004595   5.2589   0.01461 *  
+fact.A:fact.B     12 0.015714 0.0013095  14.9864 1.881e-07 ***
+Residuals         20 0.001748 0.0000874                       
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+$X.ca..grain.[[2]]
+[1] "R Square 0.98"
+
+$X.ca..grain.[[3]]
+[1] "SEm of A: 0.004 , SEd of A: 0.005 , SEm of B: 0.002 , SEd of B 0.004 , SEm of AB: 0.007 , SEd of AB: 0.009"
+
+$X.ca..grain.[[4]]
+
+	Shapiro-Wilk normality test
+
+data:  model$residuals
+W = 0.84146, p-value = 3.858e-05
+
+
+$X.ca..grain.[[5]]
+[1] "Normality assumption is violated"
+
+$X.ca..grain.[[6]]
+[1] "The means of one or more levels of first factor are not same, so go for multiple comparison test"
+
+$X.ca..grain.[[7]]
+$X.ca..grain.[[7]][[1]]
+       MSerror Df      Mean       CV  t.value        LSD
+  8.738095e-05 20 0.2216667 4.217043 2.085963 0.01125782
+
+$X.ca..grain.[[7]][[2]]
+   dependent.var groups
+T4     0.2716667      a
+T5     0.2583333      b
+T6     0.2500000      b
+T2     0.2200000      c
+T1     0.2133333      c
+T3     0.1900000      d
+T0     0.1483333      e
+
+
+$X.ca..grain.[[8]]
+[1] "The means of one or more levels of second factor are not same, so go for multiple comparison test"
+
+$X.ca..grain.[[9]]
+$X.ca..grain.[[9]][[1]]
+       MSerror Df      Mean       CV  t.value         LSD
+  8.738095e-05 20 0.2216667 4.217043 2.085963 0.007369976
+
+$X.ca..grain.[[9]][[2]]
+  dependent.var groups
+2     0.2271429      a
+1     0.2221429     ab
+3     0.2157143      b
+
+
+$X.ca..grain.[[10]]
+[1] "The means of levels of interaction between two factors are not same, so go for multiple comparison test"
+
+$X.ca..grain.[[11]]
+$X.ca..grain.[[11]][[1]]
+       MSerror Df      Mean       CV  t.value        LSD
+  8.738095e-05 20 0.2216667 4.217043 2.085963 0.01949912
+
+$X.ca..grain.[[11]][[2]]
+     dependent.var groups
+T4:2         0.295      a
+T5:2         0.275      b
+T2:3         0.260     bc
+T4:1         0.260     bc
+T4:3         0.260     bc
+T5:1         0.260     bc
+T6:3         0.260     bc
+T6:2         0.250     cd
+T1:2         0.240      d
+T5:3         0.240      d
+T6:1         0.240      d
+T1:1         0.210      e
+T2:2         0.210      e
+T3:1         0.210      e
+T1:3         0.190      f
+T2:1         0.190      f
+T3:2         0.190      f
+T0:1         0.185     fg
+T3:3         0.170      g
+T0:2         0.130      h
+T0:3         0.130      h
+
+
+
+$X.Mg.grain.
+$X.Mg.grain.[[1]]
+Analysis of Variance Table
+
+Response: dependent.var
+                  Df    Sum Sq    Mean Sq F value    Pr(>F)    
+replicationvector  1 0.0016095 0.00160952 10.4160 0.0042236 ** 
+fact.A             6 0.0076476 0.00127460  8.2486 0.0001404 ***
+fact.B             2 0.0014905 0.00074524  4.8228 0.0195297 *  
+fact.A:fact.B     12 0.0024095 0.00020079  1.2994 0.2920699    
+Residuals         20 0.0030905 0.00015452                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+$X.Mg.grain.[[2]]
+[1] "R Square 0.81"
+
+$X.Mg.grain.[[3]]
+[1] "SEm of A: 0.005 , SEd of A: 0.007 , SEm of B: 0.003 , SEd of B 0.005 , SEm of AB: 0.009 , SEd of AB: 0.012"
+
+$X.Mg.grain.[[4]]
+
+	Shapiro-Wilk normality test
+
+data:  model$residuals
+W = 0.95204, p-value = 0.07646
+
+
+$X.Mg.grain.[[5]]
+[1] "Normality assumption is not violated"
+
+$X.Mg.grain.[[6]]
+[1] "The means of one or more levels of first factor are not same, so go for multiple comparison test"
+
+$X.Mg.grain.[[7]]
+$X.Mg.grain.[[7]][[1]]
+       MSerror Df      Mean       CV  t.value        LSD
+  0.0001545238 20 0.3247619 3.827654 2.085963 0.01497076
+
+$X.Mg.grain.[[7]][[2]]
+   dependent.var groups
+T4     0.3516667      a
+T5     0.3350000      b
+T2     0.3233333     bc
+T6     0.3216667     bc
+T3     0.3183333     cd
+T1     0.3166667     cd
+T0     0.3066667      d
+
+
+$X.Mg.grain.[[8]]
+[1] "The means of one or more levels of second factor are not same, so go for multiple comparison test"
+
+$X.Mg.grain.[[9]]
+$X.Mg.grain.[[9]][[1]]
+       MSerror Df      Mean       CV  t.value         LSD
+  0.0001545238 20 0.3247619 3.827654 2.085963 0.009800661
+
+$X.Mg.grain.[[9]][[2]]
+  dependent.var groups
+1     0.3300000      a
+2     0.3278571      a
+3     0.3164286      b
+
+
+$X.Mg.grain.[[10]]
+[1] "The means of levels of interaction between two factors are same so dont go for any multiple comparison test"
+
+$X.Mg.grain.[[11]]
+$X.Mg.grain.[[11]][[1]]
+       MSerror Df      Mean       CV  t.value        LSD
+  0.0001545238 20 0.3247619 3.827654 2.085963 0.02593011
+
+$X.Mg.grain.[[11]][[2]]
+     dependent.var groups
+T4:1         0.360      a
+T4:3         0.350     ab
+T4:2         0.345    abc
+T5:2         0.345    abc
+T5:1         0.340   abcd
+T6:2         0.335  abcde
+T0:1         0.330   bcde
+T2:1         0.330   bcde
+T2:2         0.330   bcde
+T1:1         0.320   cdef
+T1:2         0.320   cdef
+T3:2         0.320   cdef
+T3:3         0.320   cdef
+T5:3         0.320   cdef
+T3:1         0.315   defg
+T6:1         0.315   defg
+T6:3         0.315   defg
+T1:3         0.310    efg
+T2:3         0.310    efg
+T0:2         0.300     fg
+T0:3         0.290      g
+
+
+
+$X.K..grain.
+$X.K..grain.[[1]]
+Analysis of Variance Table
+
+Response: dependent.var
+                  Df   Sum Sq  Mean Sq F value   Pr(>F)    
+replicationvector  1 0.008571 0.008571  2.7548   0.1126    
+fact.A             6 0.253714 0.042286 13.5904 3.91e-06 ***
+fact.B             2 0.008248 0.004124  1.3254   0.2881    
+fact.A:fact.B     12 0.038286 0.003190  1.0254   0.4636    
+Residuals         20 0.062229 0.003111                     
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+$X.K..grain.[[2]]
+[1] "R Square 0.832"
+
+$X.K..grain.[[3]]
+[1] "SEm of A: 0.023 , SEd of A: 0.032 , SEm of B: 0.015 , SEd of B 0.021 , SEm of AB: 0.039 , SEd of AB: 0.056"
+
+$X.K..grain.[[4]]
+
+	Shapiro-Wilk normality test
+
+data:  model$residuals
+W = 0.96784, p-value = 0.2789
+
+
+$X.K..grain.[[5]]
+[1] "Normality assumption is not violated"
+
+$X.K..grain.[[6]]
+[1] "The means of one or more levels of first factor are not same, so go for multiple comparison test"
+
+$X.K..grain.[[7]]
+$X.K..grain.[[7]][[1]]
+      MSerror Df      Mean       CV  t.value        LSD
+  0.003111429 20 0.6519048 8.556492 2.085963 0.06717783
+
+$X.K..grain.[[7]][[2]]
+   dependent.var groups
+T4     0.7800000      a
+T5     0.7133333     ab
+T3     0.7100000      b
+T6     0.6233333      c
+T1     0.6000000     cd
+T2     0.5933333     cd
+T0     0.5433333      d
+
+
+$X.K..grain.[[8]]
+[1] "All the second factor level means are same so dont go for any multiple comparison test"
+
+$X.K..grain.[[9]]
+$X.K..grain.[[9]][[1]]
+      MSerror Df      Mean       CV  t.value        LSD
+  0.003111429 20 0.6519048 8.556492 2.085963 0.04397821
+
+$X.K..grain.[[9]][[2]]
+  dependent.var groups
+1     0.6685714      a
+2     0.6528571      a
+3     0.6342857      a
+
+
+$X.K..grain.[[10]]
+[1] "The means of levels of interaction between two factors are same so dont go for any multiple comparison test"
+
+$X.K..grain.[[11]]
+$X.K..grain.[[11]][[1]]
+      MSerror Df      Mean       CV  t.value       LSD
+  0.003111429 20 0.6519048 8.556492 2.085963 0.1163554
+
+$X.K..grain.[[11]][[2]]
+     dependent.var groups
+T4:1          0.85      a
+T4:2          0.75     ab
+T5:2          0.75     ab
+T3:1          0.74    abc
+T4:3          0.74    abc
+T3:2          0.73     bc
+T5:1          0.72     bc
+T5:3          0.67    bcd
+T1:1          0.66    bcd
+T3:3          0.66    bcd
+T6:3          0.65   bcde
+T6:2          0.63   cdef
+T2:1          0.60    def
+T2:2          0.60    def
+T6:1          0.59    def
+T2:3          0.58    def
+T0:3          0.57    def
+T1:2          0.57    def
+T1:3          0.57    def
+T0:2          0.54     ef
+T0:1          0.52      f

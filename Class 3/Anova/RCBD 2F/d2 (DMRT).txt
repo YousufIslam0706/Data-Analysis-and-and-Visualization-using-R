@@ -1,0 +1,164 @@
+$PH
+$PH[[1]]
+Analysis of Variance Table
+
+Response: dependent.var
+                  Df Sum Sq Mean Sq F value    Pr(>F)    
+replicationvector  3 143.76  47.919  8.3634 0.0005563 ***
+fact.A             2  10.37   5.187  0.9054 0.4177631    
+fact.B             2 431.92 215.962 37.6920 3.933e-08 ***
+fact.A:fact.B      4  20.77   5.192  0.9062 0.4760445    
+Residuals         24 137.51   5.730                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+$PH[[2]]
+[1] "R Square 0.815"
+
+$PH[[3]]
+[1] "SEm of A: 0.691 , SEd of A: 0.977 , SEm of B: 0.691 , SEd of B 0.977 , SEm of AB: 1.197 , SEd of AB: 1.693"
+
+$PH[[4]]
+
+	Shapiro-Wilk normality test
+
+data:  model$residuals
+W = 0.92868, p-value = 0.02283
+
+
+$PH[[5]]
+[1] "Normality assumption is violated"
+
+$PH[[6]]
+[1] "All the first factor level means are same so dont go for any multiple comparison test"
+
+$PH[[7]]
+$PH[[7]][[1]]
+   MSerror Df   Mean       CV  t.value      LSD
+  5.729638 24 31.545 7.588101 2.063899 2.016863
+
+$PH[[7]][[2]]
+  dependent.var groups
+1      32.29333      a
+2      31.28167      a
+3      31.06000      a
+
+
+$PH[[8]]
+[1] "The means of one or more levels of second factor are not same, so go for multiple comparison test"
+
+$PH[[9]]
+$PH[[9]][[1]]
+   MSerror Df   Mean       CV  t.value      LSD
+  5.729638 24 31.545 7.588101 2.063899 2.016863
+
+$PH[[9]][[2]]
+  dependent.var groups
+3      35.95833      a
+2      31.17917      b
+1      27.49750      c
+
+
+$PH[[10]]
+[1] "The means of levels of interaction between two factors are same so dont go for any multiple comparison test"
+
+$PH[[11]]
+$PH[[11]][[1]]
+   MSerror Df   Mean       CV  t.value      LSD
+  5.729638 24 31.545 7.588101 2.063899 3.493309
+
+$PH[[11]][[2]]
+    dependent.var groups
+2:3       36.7575      a
+1:3       36.1775     ab
+3:3       34.9400     ab
+1:2       32.6925     bc
+3:2       31.4000     cd
+2:2       29.4450    cde
+1:1       28.0100     de
+2:1       27.6425      e
+3:1       26.8400      e
+
+
+
+$GY
+$GY[[1]]
+Analysis of Variance Table
+
+Response: dependent.var
+                  Df Sum Sq Mean Sq F value Pr(>F)
+replicationvector  3  1.405  0.4684  0.1275 0.9428
+fact.A             2  0.354  0.1769  0.0482 0.9531
+fact.B             2  2.357  1.1786  0.3209 0.7286
+fact.A:fact.B      4  3.199  0.7999  0.2178 0.9259
+Residuals         24 88.147  3.6728               
+
+$GY[[2]]
+[1] "R Square 0.077"
+
+$GY[[3]]
+[1] "SEm of A: 0.553 , SEd of A: 0.782 , SEm of B: 0.553 , SEd of B 0.782 , SEm of AB: 0.958 , SEd of AB: 1.355"
+
+$GY[[4]]
+
+	Shapiro-Wilk normality test
+
+data:  model$residuals
+W = 0.93432, p-value = 0.03392
+
+
+$GY[[5]]
+[1] "Normality assumption is violated"
+
+$GY[[6]]
+[1] "All the first factor level means are same so dont go for any multiple comparison test"
+
+$GY[[7]]
+$GY[[7]][[1]]
+   MSerror Df     Mean       CV  t.value      LSD
+  3.672801 24 11.26389 17.01415 2.063899 1.614773
+
+$GY[[7]][[2]]
+  dependent.var groups
+2      11.35000      a
+1      11.31667      a
+3      11.12500      a
+
+
+$GY[[8]]
+[1] "All the second factor level means are same so dont go for any multiple comparison test"
+
+$GY[[9]]
+$GY[[9]][[1]]
+   MSerror Df     Mean       CV  t.value      LSD
+  3.672801 24 11.26389 17.01415 2.063899 1.614773
+
+$GY[[9]][[2]]
+  dependent.var groups
+2      11.50000      a
+1      11.38333      a
+3      10.90833      a
+
+
+$GY[[10]]
+[1] "The means of levels of interaction between two factors are same so dont go for any multiple comparison test"
+
+$GY[[11]]
+$GY[[11]][[1]]
+   MSerror Df     Mean       CV  t.value      LSD
+  3.672801 24 11.26389 17.01415 2.063899 2.796868
+
+$GY[[11]][[2]]
+    dependent.var groups
+3:2        11.825      a
+2:1        11.775      a
+1:1        11.600      a
+2:2        11.500      a
+1:2        11.175      a
+1:3        11.175      a
+2:3        10.775      a
+3:1        10.775      a
+3:3        10.775      a
+
+
+
