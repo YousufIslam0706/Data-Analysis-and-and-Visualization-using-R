@@ -1,0 +1,292 @@
+$Chl.a
+$Chl.a[[1]]
+Analysis of Variance Table
+
+Response: data2
+            Df   Sum Sq  Mean Sq F value    Pr(>F)    
+replication  2 0.117636 0.058818 180.740 < 2.2e-16 ***
+trt         16 0.242566 0.015160  46.586 < 2.2e-16 ***
+Residuals   32 0.010414 0.000325                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+$Chl.a[[2]]
+[1] "R Square 0.972"
+
+$Chl.a[[3]]
+
+	Shapiro-Wilk normality test
+
+data:  model$residuals
+W = 0.9575, p-value = 0.06529
+
+
+$Chl.a[[4]]
+[1] "Normality assumption is not violated"
+
+$Chl.a[[5]]
+[1] "SEm 0.0104 , SEd 0.0147"
+
+$Chl.a[[6]]
+[1] "The treatment means of one or more treatments are not same, so go for multiple comparison test"
+
+$Chl.a[[7]]
+$Chl.a[[7]][[1]]
+       MSerror Df      Mean      CV  t.value        LSD
+  0.0003254289 32 0.5277451 3.41825 2.036933 0.03000263
+
+$Chl.a[[7]][[2]]
+        data2 groups
+G17 0.6216667      a
+G5  0.5966667     ab
+G4  0.5866667     bc
+G6  0.5800000    bcd
+G13 0.5783333    bcd
+G8  0.5666667     cd
+G9  0.5600000     cd
+G15 0.5583333     cd
+G2  0.5566667      d
+G3  0.5566667      d
+G10 0.5533333      d
+G7  0.5000000      e
+G12 0.4916667      e
+G14 0.4350000      f
+G11 0.4216667     fg
+G16 0.4150000     fg
+G1  0.3933333      g
+
+
+
+$Chl.B
+$Chl.B[[1]]
+Analysis of Variance Table
+
+Response: data2
+            Df   Sum Sq   Mean Sq F value    Pr(>F)    
+replication  2 0.026416 0.0132078  460.58 < 2.2e-16 ***
+trt         16 0.125118 0.0078199  272.69 < 2.2e-16 ***
+Residuals   32 0.000918 0.0000287                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+$Chl.B[[2]]
+[1] "R Square 0.994"
+
+$Chl.B[[3]]
+
+	Shapiro-Wilk normality test
+
+data:  model$residuals
+W = 0.95383, p-value = 0.04563
+
+
+$Chl.B[[4]]
+[1] "Normality assumption is violated"
+
+$Chl.B[[5]]
+[1] "SEm 0.0031 , SEd 0.0044"
+
+$Chl.B[[6]]
+[1] "The treatment means of one or more treatments are not same, so go for multiple comparison test"
+
+$Chl.B[[7]]
+$Chl.B[[7]][[1]]
+       MSerror Df      Mean      CV  t.value         LSD
+  2.867647e-05 32 0.2743137 1.95216 2.036933 0.008906233
+
+$Chl.B[[7]][[2]]
+        data2 groups
+G17 0.3566667      a
+G6  0.3300000      b
+G8  0.3300000      b
+G2  0.3233333      b
+G5  0.3233333      b
+G13 0.3000000      c
+G10 0.2933333      c
+G15 0.2766667      d
+G4  0.2766667      d
+G3  0.2733333     de
+G9  0.2666667      e
+G12 0.2566667      f
+G7  0.2566667      f
+G14 0.2066667      g
+G1  0.2033333     gh
+G11 0.1966667     hi
+G16 0.1933333      i
+
+
+
+$Total.Chl
+$Total.Chl[[1]]
+Analysis of Variance Table
+
+Response: data2
+            Df  Sum Sq  Mean Sq F value    Pr(>F)    
+replication  2 0.30740 0.153702 106.778 6.919e-15 ***
+trt         16 0.64113 0.040070  27.837 2.581e-14 ***
+Residuals   32 0.04606 0.001439                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+$Total.Chl[[2]]
+[1] "R Square 0.954"
+
+$Total.Chl[[3]]
+
+	Shapiro-Wilk normality test
+
+data:  model$residuals
+W = 0.91959, p-value = 0.00203
+
+
+$Total.Chl[[4]]
+[1] "Normality assumption is violated"
+
+$Total.Chl[[5]]
+[1] "SEm 0.0219 , SEd 0.031"
+
+$Total.Chl[[6]]
+[1] "The treatment means of one or more treatments are not same, so go for multiple comparison test"
+
+$Total.Chl[[7]]
+$Total.Chl[[7]][[1]]
+      MSerror Df      Mean       CV  t.value        LSD
+  0.001439461 32 0.8403922 4.514586 2.036933 0.06310025
+
+$Total.Chl[[7]][[2]]
+        data2 groups
+G17 0.9800000      a
+G6  0.9533333     ab
+G8  0.9533333     ab
+G10 0.9300000    abc
+G5  0.9266667    abc
+G2  0.9233333   abcd
+G13 0.8933333   bcde
+G9  0.8866667   cdef
+G15 0.8833333   cdef
+G4  0.8633333    def
+G3  0.8433333    efg
+G7  0.8300000     fg
+G12 0.7966667      g
+G14 0.6733333      h
+G11 0.6633333      h
+G16 0.6500000      h
+G1  0.6366667      h
+
+
+
+$TP
+$TP[[1]]
+Analysis of Variance Table
+
+Response: data2
+            Df  Sum Sq Mean Sq  F value    Pr(>F)    
+replication  2     5.2    2.58   17.714  6.62e-06 ***
+trt         16 13484.0  842.75 5776.000 < 2.2e-16 ***
+Residuals   32     4.7    0.15                       
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+$TP[[2]]
+[1] "R Square 1"
+
+$TP[[3]]
+
+	Shapiro-Wilk normality test
+
+data:  model$residuals
+W = 0.82801, p-value = 3.451e-06
+
+
+$TP[[4]]
+[1] "Normality assumption is violated"
+
+$TP[[5]]
+[1] "SEm 0.2205 , SEd 0.3119"
+
+$TP[[6]]
+[1] "The treatment means of one or more treatments are not same, so go for multiple comparison test"
+
+$TP[[7]]
+$TP[[7]][[1]]
+    MSerror Df     Mean       CV  t.value       LSD
+  0.1459059 32 15.70687 2.431906 2.036933 0.6352835
+
+$TP[[7]][[2]]
+         data2 groups
+G6  63.2995556      a
+G9  50.3491556      b
+G13 22.5230222      c
+G17 19.4830222      d
+G12 17.5779556      e
+G11 14.8520889      f
+G7  14.1022222      g
+G10 11.4979556      h
+G16 10.8291556      i
+G15 10.3731556      i
+G2   6.8872889      j
+G3   6.2184889      k
+G8   6.2184889      k
+G4   4.5262222      l
+G1   4.4856889      l
+G5   2.8542222      m
+G14  0.9390222      n
+
+
+
+$FY
+$FY[[1]]
+Analysis of Variance Table
+
+Response: data2
+            Df Sum Sq Mean Sq  F value    Pr(>F)    
+replication  2   13.5    6.77   49.556 1.585e-10 ***
+trt         16 6841.1  427.57 3131.311 < 2.2e-16 ***
+Residuals   32    4.4    0.14                       
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+$FY[[2]]
+[1] "R Square 0.999"
+
+$FY[[3]]
+
+	Shapiro-Wilk normality test
+
+data:  model$residuals
+W = 0.94875, p-value = 0.02796
+
+
+$FY[[4]]
+[1] "Normality assumption is violated"
+
+$FY[[5]]
+[1] "SEm 0.2133 , SEd 0.3017"
+
+$FY[[6]]
+[1] "The treatment means of one or more treatments are not same, so go for multiple comparison test"
+
+$FY[[7]]
+$FY[[7]][[1]]
+    MSerror Df    Mean       CV  t.value       LSD
+  0.1365453 32 29.3798 1.257736 2.036933 0.6145676
+
+$FY[[7]][[2]]
+       data2 groups
+G1  55.49000      a
+G3  42.76333      b
+G4  40.37667      c
+G11 40.19333      c
+G8  36.90667      d
+G2  34.78667      e
+G13 33.97333      f
+G16 33.52667      f
+G15 28.13333      g
+G14 26.11667      h
+G17 25.85000      h
+G7  20.95667      i
+G5  20.83333      i
+G6  19.79000      j
+G12 16.23667      k
+G10 13.04333      l
+G9  10.48000      m
